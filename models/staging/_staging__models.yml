@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: customers_latest
+    description: ""
+    columns:
+      - name: ID
+        tests:
+          - not_null
+  - name: orders_latest
+    description: ""
+    columns:
+      - name: ID
+        tests:
+          - not_null
+      - name: STATUS
+        tests:
+          - accepted_values:
+              values: ['returned','completed','return_pending','shipped','placed']
+    

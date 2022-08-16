@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: jshop
+    database: TROUZE_DB
+    schema: JAFFLE_SHOP
+    tables:
+      - name: customers
+      - name: orders
