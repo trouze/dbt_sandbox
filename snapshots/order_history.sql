@@ -11,6 +11,6 @@
     )
 }}
 
-select * from {{ source('jshop', 'ORDERS') }}
+select * from {{ source('jshop', 'orders') }}
 
 {% endsnapshot %}

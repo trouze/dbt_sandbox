@@ -1,20 +1,22 @@
 version: 2
 
 models:
-  - name: customers_latest
+  - name: stg_customers
     description: ""
     columns:
-      - name: ID
+      - name: customer_id
         tests:
           - not_null
-  - name: orders_latest
+  - name: stg_orders
     description: ""
     columns:
-      - name: ID
+      - name: order_id
         tests:
           - not_null
-      - name: STATUS
+      - name: order_status
         tests:
           - accepted_values:
               values: ['returned','completed','return_pending','shipped','placed']
+  - name: stg_payments
+    description: ""
     

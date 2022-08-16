@@ -1,0 +1,46 @@
+name: "Run and Test dbt models"
+on:
+  pull_request:
+    types:
+      - open
+
+jobs:
+  build:
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - id: setup-env
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8.12"
+
+      - run:  |
+          pip3 install -r requirements.txt
+        shell: bash
+      
+      - id: dbt-run
+        env:
+          SF_USERNAME: ${{ secrets.SF_USERNAME }}
+          SF_PASSWORD: ${{ secrets.SF_PASSWORD }}
+          ACCOUNT: ${{ secrets.ACCOUNT }}
+          DATABASE: ${{ secrets.DATABASE }}
+          ROLE: ${{ secrets.ROLE }}
+          SCHEMA: ${{ secrets.SCHEMA }}
+          WAREHOUSE: ${{ secrets.WAREHOUSE }}
+        run:  |
+          dbt run -m state:modified+1 1+exposure:*,state:modified+ --profiles-dir . --target ${{ secrets.environment }}
+        shell: bash
+
+      - id: dbt-test
+        run:  |
+          dbt docs generate --profiles-dir . --target ${{ secrets.environment }}
+        shell: bash
+      

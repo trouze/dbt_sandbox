@@ -1,22 +1,15 @@
 version: 2
 
 models:
-  - name: orders_by_customer
+  - name: fct_orders
     description: ""
     columns:
-      - name: ID
+      - name: order_id
         tests:
-          - not_null
-      - name: FIRST_NAME
-      - name: LAST_NAME
-      - name: ORDER_DATE
-      - name: STATUS
-        tests:
-          - accepted_values:
-              values: ['returned','completed','return_pending','shipped','placed']
-  - name: customer_tfx
+          - unique
+  - name: dim_customers
     description: ""
     columns:
-      - name: ID
+      - name: customer_id
         tests:
           - unique

@@ -11,6 +11,6 @@
     )
 }}
 
-select * from {{ ref('customers') }}
+select * from {{ source('jshop','customers') }}
 
 {% endsnapshot %}
