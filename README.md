@@ -1,3 +1,6 @@
+This project aims to demo the dbt slim CI functionality, as well as give a forum for discussing the --defer and --state flags in dbt CLI that make slim CI possible.
+
+
 Welcome to your new dbt project!
 
 ### Using the starter project

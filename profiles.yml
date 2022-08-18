@@ -1,6 +1,6 @@
 a8snowflake:
   outputs:
-    dev:
+    ci:
       account: "{{ env_var('ACCOUNT') }}"
       database: "{{ env_var('DATABASE') }}"
       password: "{{ env_var('SF_PASSWORD') }}"
@@ -10,4 +10,4 @@ a8snowflake:
       type: snowflake
       user: "{{ env_var('SF_USERNAME') }}"
       warehouse: "{{ env_var('WAREHOUSE') }}"
-  target: dev
+  target: ci

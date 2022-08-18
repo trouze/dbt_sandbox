@@ -23,7 +23,12 @@ jobs:
           python-version: "3.8.12"
 
       - run:  |
-          pip3 install -r requirements.txt
+          pip3 install dbt-snowflake
+        shell: bash
+
+      - id: dbt-deps
+        run:  |
+          dbt deps
         shell: bash
       
       - id: dbt-run
@@ -36,11 +41,11 @@ jobs:
           SCHEMA: ${{ secrets.SCHEMA }}
           WAREHOUSE: ${{ secrets.WAREHOUSE }}
         run:  |
-          dbt run -m state:modified+1 1+exposure:*,state:modified+ --profiles-dir . --target ${{ secrets.environment }}
+          dbt run -m state:modified+1 1+exposure:*,state:modified+ --profiles-dir . --target ci --defer --state ./target
         shell: bash
 
       - id: dbt-test
         run:  |
-          dbt docs generate --profiles-dir . --target ${{ secrets.environment }}
+          dbt test -m state:modified+1 1+exposure:*,state:modified+ --exclude test_name:relationships test_name:relationships_where --profiles-dir . --target ci --defer --state ./target
         shell: bash
       
