@@ -13,7 +13,7 @@
         {%- endset -%}
         
         {{ drop_database_sql }};
-        {# do run_query(drop_database_sql) #}
+        {% do run_query(drop_database_sql) %}
 
     {%- endfor -%}
 {%- endif -%}

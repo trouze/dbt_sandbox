@@ -42,4 +42,5 @@ models:
       +schema: jaffle_int
     marts:
       +materialized: table
+      +schema: jaffle_mart
 

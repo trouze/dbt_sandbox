@@ -41,11 +41,16 @@ jobs:
           SCHEMA: ${{ secrets.SCHEMA }}
           WAREHOUSE: ${{ secrets.WAREHOUSE }}
         run:  |
-          dbt run -m state:modified+1 1+exposure:*,state:modified+ --profiles-dir . --target ci --defer --state ./target
+          dbt run -m state:modified+1 1+exposure:*,state:modified+ --profiles-dir . --target ci --defer --state ./dev-run-artifacts
         shell: bash
 
       - id: dbt-test
         run:  |
-          dbt test -m state:modified+1 1+exposure:*,state:modified+ --exclude test_name:relationships test_name:relationships_where --profiles-dir . --target ci --defer --state ./target
+          dbt test -m state:modified+1 1+exposure:*,state:modified+ --exclude test_name:relationships test_name:relationships_where --profiles-dir . --target ci --defer --state ./dev-run-artifacts
+        shell: bash
+      
+      - id: dbt-drop-ci-schemas
+        run:  |
+          dbt run-operation remove_mr_schemas --profiles-dir .
         shell: bash
       
