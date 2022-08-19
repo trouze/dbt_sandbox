@@ -10,7 +10,7 @@ dbt deps
 ```
 dbt run --profiles-dir .
 #### Copy manifest.json from you production run
-cp ./target/manifest.json ./dev-run-artifacts/manifest.json
+mkdir dev-run-artifacts && cp ./target/manifest.json ./dev-run-artifacts/manifest.json
 ```
 #### Change a model
 orders_by_customers.sql changes
