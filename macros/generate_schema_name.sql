@@ -15,11 +15,11 @@
     {%- else -%}
         {%- if custom_schema_name is none -%}
 
-            ci_{{ default_schema }}
+            {{ default_schema }}
             
         {%- else -%}
 
-            ci_{{ custom_schema_name | trim }}
+            {{ custom_schema_name | trim }}
 
         {%- endif -%}
     {%- endif -%}
