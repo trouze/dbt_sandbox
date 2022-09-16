@@ -21,3 +21,4 @@ a8snowflake:
       user: "{{ env_var('SF_USERNAME') }}"
       warehouse: "{{ env_var('WAREHOUSE') }}"
   target: dev
+

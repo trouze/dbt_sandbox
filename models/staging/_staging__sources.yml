@@ -6,5 +6,17 @@ sources:
     schema: JAFFLE_SHOP
     tables:
       - name: customers
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+        loaded_at_field: "cast(load_dts as TIMESTAMP)"
       - name: orders
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+        loaded_at_field: "cast(load_dts as TIMESTAMP)"
       - name: payments
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+        loaded_at_field: "cast(load_dts as TIMESTAMP)"
