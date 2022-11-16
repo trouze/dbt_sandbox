@@ -3,13 +3,15 @@ version: 2
 models:
   - name: fct_orders
     description: ""
-    columns:
-      - name: order_id
-        tests:
-          - unique
+    tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour
   - name: dim_customers
     description: ""
-    columns:
-      - name: customer_id
-        tests:
-          - unique
+    tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour
