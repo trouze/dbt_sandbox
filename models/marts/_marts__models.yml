@@ -8,14 +8,14 @@ models:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
-    # columns:
-    #   - name: customer_id
-    #     tests:
-    #       - not_null
-    #   - name: first_name
-    #   - name: last_initial
-    #   - name: max_order_date
-    #   - name: min_order_date
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: first_name
+      - name: last_initial
+      - name: max_order_date
+      - name: min_order_date
 
 # exposures:
 #   - name: jaffle_order_metrics
