@@ -9,7 +9,7 @@ final as (
         c.customer_id as customer_id,
         c.first_name as first_name,
         c.last_initial as last_initial,
-        max(o.order_date) as max_order_date,
+        max(o.order_date2) as max_order_date,
         min(o.order_date) as min_order_date,
         count(o.order_date) as num_orders,
         current_timestamp() as last_model_run
