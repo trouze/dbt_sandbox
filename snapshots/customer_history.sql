@@ -4,10 +4,9 @@
     config(
       target_database='TROUZE_DB',
       target_schema='JAFFLE_SHOP',
-      unique_key='ID',
-      
+      unique_key='CUSTOMER_ID',
       strategy='timestamp',
-      updated_at='SIGNUP_DATE',
+      updated_at='UPDATED_ON',
     )
 }}
 
