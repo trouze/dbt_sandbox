@@ -2,7 +2,9 @@
   {% set original_query_tag = set_query_tag() %}
 
   {%- set language = model['language'] -%}
-  {% set target_relation = this %}
+  {%- set target_relation = api.Relation.create(
+        identifier=identifier, schema=schema, database=database,
+        type='table') -%}
 
   {{ run_hooks(pre_hooks) }}
 
