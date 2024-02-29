@@ -4,7 +4,7 @@ with source as (
 ),
 renamed as (
     select
-        ID as customer_id,
+        CUSTOMER_ID as customer_id,
         FIRST_NAME as first_name,
         LAST_NAME as last_name,
         SIGNUP_DATE as signup_date,
