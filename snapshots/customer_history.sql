@@ -2,14 +2,14 @@
 
 {{
     config(
-      target_database='TROUZE_DB',
-      target_schema='JAFFLE_SHOP',
-      unique_key='CUSTOMER_ID',
+      target_database='TROUZEDB',
+      target_schema='ODS',
+      unique_key='ID',
       strategy='timestamp',
-      updated_at='UPDATED_ON',
+      updated_at='LOAD_DTS',
     )
 }}
 
-select * from {{ source('jshop','customers') }}
+select * from {{ source('jaffle_shop','raw_customers') }}
 
 {% endsnapshot %}

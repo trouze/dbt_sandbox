@@ -20,11 +20,31 @@ models:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
-  - name: stg_payments
+  - name: stg_items
     description: ""
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
           error_after: 24
           time_part: hour
-    
+  - name: stg_products
+    description: ""
+    data_tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour
+  - name: stg_stores
+    description: ""
+    data_tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour
+  - name: stg_supplies
+    description: ""
+    data_tests:
+      - is_model_fresh:
+          last_model_run_field: last_model_run
+          error_after: 24
+          time_part: hour

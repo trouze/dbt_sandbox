@@ -7,16 +7,15 @@ o as (
 final as (
     select
         c.customer_id as customer_id,
-        c.first_name as first_name,
-        c.last_initial as last_initial,
-        max(o.order_date) as max_order_date,
-        min(o.order_date) as min_order_date,
-        count(o.order_date) as num_orders,
+        c.name as name,
+        min(o.order_timestamp) as first_order_date,
+        max(o.order_timestamp) as last_order_date,
+        count(o.order_timestamp) as num_orders,
         current_timestamp() as last_model_run
     from c
     left join o on o.customer_id = c.customer_id
     where o.customer_id is not null
-    group by c.customer_id, c.first_name, c.last_initial
+    group by c.customer_id, c.name
 )
 select * from final
 {% if target.name == 'ci' %}

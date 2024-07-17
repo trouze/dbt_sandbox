@@ -1,13 +1,13 @@
 with source as (
     select *
-    from {{ source('jshop','customers') }}
+    from {{ source('jaffle_shop','raw_customers') }}
 ),
 renamed as (
     select
-        CUSTOMER_ID as customer_id,
-        FIRST_NAME as first_name,
-        LAST_NAME as last_name,
+        ID as customer_id,
+        NAME as name,
         SIGNUP_DATE as signup_date,
+        LOAD_DTS as load_dts,
         current_timestamp() as last_model_run
     from source
 )
