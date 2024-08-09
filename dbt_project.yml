@@ -6,6 +6,10 @@ name: 'dbt_sandbox'
 version: '1.0.0'
 config-version: 2
 
+# Set dbt Cloud Info
+dbt-cloud:
+  project-id: 376310
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'sa_snowflake'
 
