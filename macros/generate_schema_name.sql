@@ -12,6 +12,18 @@
             ci_{{ custom_schema_name | trim }}
 
         {%- endif -%}
+    {%- elif target_name == 'prod' -%}
+
+        {%- if custom_schema_name is none -%}
+
+            {{ default_schema }}
+            
+        {%- else -%}
+
+            {{ custom_schema_name | trim }}
+
+        {%- endif -%}
+
     {%- else -%}
         {%- if custom_schema_name is none -%}
 
