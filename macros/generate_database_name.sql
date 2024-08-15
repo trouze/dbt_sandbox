@@ -2,8 +2,13 @@
 
     {%- set default_database = target.database -%}
     {%- if custom_database_name is none -%}
-
-        {{ default_database }}
+        {%- if target.name == "prod" -%}
+            {{ default_database }}
+        {%- elif target.name == "uat" %}
+            uat_{{ default_database }}
+        {%- else -%}
+            {{ default_database }}
+        {%- endif -%}
 
     {%- else -%}
 
