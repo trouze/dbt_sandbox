@@ -7,7 +7,7 @@
         {%- elif target.name == "uat" %}
             uat_{{ default_database }}
         {%- else -%}
-            {{ default_database }}
+            uat_{{ default_database }}
         {%- endif -%}
 
     {%- else -%}
