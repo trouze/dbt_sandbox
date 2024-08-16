@@ -12,7 +12,7 @@
             ci_{{ custom_schema_name | trim }}
 
         {%- endif -%}
-    {%- elif target_name == 'prod' -%}
+    {%- elif target_name == 'prod' or target_name == 'uat' -%}
 
         {%- if custom_schema_name is none -%}
 
