@@ -2,8 +2,7 @@
 
 {{
     config(
-      target_database='TROUZEDB',
-      target_schema='ODS',
+      schema='ODS',
       unique_key='ID',
       strategy='timestamp',
       updated_at='LOAD_DTS',
