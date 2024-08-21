@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: TROUZEDB
-    schema: raw
+    database: RAW
+    schema: trouze
     tables:
       - name: raw_customers
         freshness:
