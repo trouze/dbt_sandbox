@@ -3,9 +3,8 @@ version: 2
 models:
   - name: orders_by_customer
     description: ""
+    group: mart
     access: public
-    config:
-      group: mart
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
