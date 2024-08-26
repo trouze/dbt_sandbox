@@ -3,6 +3,9 @@ version: 2
 models:
   - name: orders_by_customer
     description: ""
+    access: public
+    config:
+      group: mart
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
@@ -31,3 +34,11 @@ exposures:
     owner:
       name: Tyler from A8
       email: data@jaffleshop.com
+
+groups:
+  - name: mart
+    owner:
+      # 'name' or 'email' is required; additional properties allowed
+      email: mart@jaffleshop.com
+      slack: mart-data
+      github: mart-data-team
