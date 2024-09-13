@@ -4,7 +4,7 @@ models:
   - name: stg_customers
     group: customers_group
     access: public
-    description: "test change"
+    description: "test another change"
     data_tests:
       - is_model_fresh:
           last_model_run_field: last_model_run
@@ -13,7 +13,7 @@ models:
     columns:
       - name: customer_id
         data_type: text
-        description: "test change"
+        description: "test another change"
         data_tests:
           - anot_null
           - unique
