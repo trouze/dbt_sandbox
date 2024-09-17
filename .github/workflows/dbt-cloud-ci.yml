@@ -56,5 +56,5 @@ jobs:
           python-version: "3.9"
         if: ${{ contains(fromJSON(needs.changes.outputs.projects), matrix.project) }}
       - name: Run dbt Cloud job
-        run: "python python/run_and_monitor_dbt_job.py"
+        run: "python utils/dbt_cloud_ci_caller.py"
         if: ${{ contains(fromJSON(needs.changes.outputs.projects), matrix.project) }}
