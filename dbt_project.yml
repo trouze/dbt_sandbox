@@ -54,4 +54,5 @@ models:
 
 seeds:
   dbt_sandbox:
-    +schema: raw
+    +enabled: false
+    +schema: trouze
