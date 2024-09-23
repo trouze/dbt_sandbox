@@ -15,7 +15,7 @@ models:
         data_type: text
         description: "test"
         data_tests:
-          - anot_null
+          - not_null
           - unique
       - name: last_model_run
         data_type: timestamp_ltz
