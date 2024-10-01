@@ -5,6 +5,7 @@ with source as (
 renamed as (
     select
         ID as customer_id,
+        'new_column' as new_col
         NAME as name,
         SIGNUP_DATE as signup_date,
         LOAD_DTS as load_dts,
