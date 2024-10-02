@@ -52,7 +52,4 @@ models:
       +schema: jaffle_mart
       +group: mart
 
-seeds:
-  dbt_sandbox:
-    +enabled: false
-    +schema: trouze
+on-run-end: '{{ centralize_test_failures(results) }}'

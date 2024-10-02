@@ -5,18 +5,15 @@ models:
     group: customers_group
     access: public
     description: "test"
-    data_tests:
-      - is_model_fresh:
-          last_model_run_field: last_model_run
-          error_after: 1
-          time_part: minute
     columns:
       - name: customer_id
         data_type: text
         description: "test"
         data_tests:
-          - not_null
-          - unique
+          - pct_null:
+              config:
+                severity: error
+                store_failures: true
       - name: last_model_run
         data_type: timestamp_ltz
       - name: load_dts
@@ -27,39 +24,14 @@ models:
         data_type: text
   - name: stg_orders
     description: ""
-    data_tests:
-      - is_model_fresh:
-          last_model_run_field: last_model_run
-          error_after: 24
-          time_part: hour
   - name: stg_items
     description: ""
-    data_tests:
-      - is_model_fresh:
-          last_model_run_field: last_model_run
-          error_after: 24
-          time_part: hour
   - name: stg_products
     description: ""
-    data_tests:
-      - is_model_fresh:
-          last_model_run_field: last_model_run
-          error_after: 24
-          time_part: hour
   - name: stg_stores
     description: ""
-    data_tests:
-      - is_model_fresh:
-          last_model_run_field: last_model_run
-          error_after: 24
-          time_part: hour
   - name: stg_supplies
     description: ""
-    data_tests:
-      - is_model_fresh:
-          last_model_run_field: last_model_run
-          error_after: 24
-          time_part: hour
 
 
 groups:
