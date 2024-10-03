@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: transactions
+    description: My transformation written in Python
+    config:
+      database: DEV_TROUZEDB
+      schema: FS_DBT_SCHEMA
+      materialized: table
+      tags: ['python']
+
+  - name: customers
+    description: My transformation written in Python
+    config:
+      database: DEV_TROUZEDB
+      schema: FS_DBT_SCHEMA
+      materialized: table
+      tags: ['python']
+
+  - name: terminals
+    description: My transformation written in Python
+    config:
+      database: DEV_TROUZEDB
+      schema: FS_DBT_SCHEMA
+      materialized: table
+      tags: ['python']

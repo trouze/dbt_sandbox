@@ -51,6 +51,9 @@ models:
       +materialized: table
       +schema: jaffle_mart
       +group: mart
+    modeling:
+      +materialized: table
+      +schema: FS_DBT_SCHEMA
 
 seeds:
   dbt_sandbox:
